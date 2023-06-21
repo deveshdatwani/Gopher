@@ -40,7 +40,7 @@ public abstract class Experiment : MonoBehaviour
     public GraphicalInterface[] graphicalInterfaces;
     public ControlInterface[] controlInterfaces;
 
-    
+
     // Generate task
     protected virtual T GenerateTask<T>(int levelIndex, int taskIndex, GameObject parent) 
                 where T : Task 
