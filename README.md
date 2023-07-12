@@ -2,5 +2,6 @@
 Summer project by Devesh Datwani
 
 <input type="checkbox" disabled checked /> Feature 1
-- [ ]
-- [ ]
+- [x]
+- [x]
+- [x]
