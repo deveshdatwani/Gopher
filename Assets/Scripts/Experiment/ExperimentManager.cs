@@ -14,21 +14,24 @@ public class ExperimentManager : MonoBehaviour
     private int totalTaskIndex;
     private int experimentIndex;
     private int taskIndex;
+    
     // randomization
     public bool randomizeTasks;
     private int totalNumTask;
     private int[] cumulativeSumNumTask;
     private System.Random randomInt = new System.Random();
     private int[] randomizedIndices;
+    
     // Task
     public bool experimentStarted;
     private bool taskStarted;
     private bool taskLoaded;
     private Task currentTask;
+    
     // whether using the same scene and robot during the whole experiment
     public bool keepSameSceneAndRobot;
     private GameObject[] spawnedRobots;
-
+    
     // UIs
     public ExperimentMenus experimentMenus;
     private GraphicalInterface gUI;
