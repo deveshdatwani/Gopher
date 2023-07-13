@@ -1,0 +1,4 @@
+game_time,self_name,other_name,relative_speed,
+9.911,gopher/chassis_link,floor,0.000,
+22.220,gopher/left_arm_forearm_link,Service Cart (14),1.027,
+40.220,gopher/left_arm_robotiq_arg2f_base_link,Male Nurse(Clone),0.050,
