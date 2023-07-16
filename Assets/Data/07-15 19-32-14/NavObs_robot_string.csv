@@ -1,0 +1,6 @@
+game_time,self_name,other_name,relative_speed,
+20.300,gopher/chassis_link,floor,0.000,
+34.000,gopher/right_arm_gripper_right,Male Nurse(Clone),1.406,
+63.200,gopher/chassis_link,IV Pole Movable(Clone),0.321,
+65.900,gopher/chassis_link,IV Pole Movable(Clone),0.221,
+67.600,gopher/chassis_link,IV Pole Movable(Clone),0.690,
