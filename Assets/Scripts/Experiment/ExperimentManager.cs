@@ -56,25 +56,25 @@ public class ExperimentManager : MonoBehaviour
 
     void Update()
     {
-        // Simulation not started
-        if (!experimentStarted)
-            return;
+        // // Simulation not started
+        // if (!experimentStarted)
+        //     return;
 
-        // Hotkeys
-        if (Input.GetKeyDown(KeyCode.Escape))
-            LoadQuitMenus();
+        // // Hotkeys
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        //     LoadQuitMenus();
 
-        // Check if user starts to move the robot
-        if (currentTask != null && 
-            taskLoaded && !taskStarted && 
-            currentTask.CheckTaskStart())
-        {
-            // start
-            taskStarted = true;
-            StartRecording();
-            // check current task status until completion every 1s
-            InvokeRepeating("CheckTaskCompletion", 0f, 0.5f);
-        }
+        // // Check if user starts to move the robot
+        // if (currentTask != null && 
+        //     taskLoaded && !taskStarted && 
+        //     currentTask.CheckTaskStart())
+        // {
+        //     // start
+        //     taskStarted = true;
+        //     StartRecording();
+        //     // check current task status until completion every 1s
+        //     InvokeRepeating("CheckTaskCompletion", 0f, 0.5f);
+        // }
     }
     private void CheckTaskCompletion() 
     {
