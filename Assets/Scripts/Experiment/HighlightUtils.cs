@@ -19,7 +19,7 @@ public static class HighlightUtils
         outline.enabled = true;
         outline.OutlineMode = Outline.Mode.OutlineVisible;
         outline.OutlineWidth = 10;
-        outline.OutlineColor = color ?? Color.blue;
+        outline.OutlineColor = color ?? Color.green;
     }
 
     public static void UnhighlightObject(GameObject gameObject)

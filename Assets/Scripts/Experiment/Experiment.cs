@@ -26,7 +26,6 @@ public abstract class Experiment : MonoBehaviour
     protected Vector3[] dynamicObjectSpawnPositions;
     protected Vector3[] dynamicObjectSpawnRotations;
     protected Vector3[,] dynamicObjectTrajectories;
-    
     // task object
     public GameObject[] taskObjects;
     protected Vector3[] taskObjectSpawnPositions;
@@ -35,7 +34,6 @@ public abstract class Experiment : MonoBehaviour
     public GameObject[] goalObjects;
     protected Vector3[] goalSpawnPositions;
     protected Vector3[] goalSpawnRotations;
-
     // Interface
     public GraphicalInterface[] graphicalInterfaces;
     public ControlInterface[] controlInterfaces;

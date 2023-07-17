@@ -10,6 +10,9 @@ public class GraphicalInterface : MonoBehaviour
     // Active
     private bool active;
 
+    // AR Features
+    public bool ARisActive = false;
+
     // UI
     public GameObject[] interfaces;
     public GameObject speedometerPointer;
@@ -23,6 +26,7 @@ public class GraphicalInterface : MonoBehaviour
     public GameObject infoObstacle1;
     public GameObject infoObstacle2;
     public GameObject infoObstacle3;
+    public GameObject Test;
 
     // OBH
     private Vector3 prevPos;
@@ -160,6 +164,7 @@ public class GraphicalInterface : MonoBehaviour
     {
         // Activation
         SetUIActive(false);
+        // Test.SetActive(false);
 
         // Camera displays
         // main render texture
@@ -307,6 +312,8 @@ public class GraphicalInterface : MonoBehaviour
                 }
         }
 
+
+
         // map navigation
         if (displayMapInMain && autoNavigation != null &&
             Input.GetMouseButtonDown(0))
@@ -381,6 +388,37 @@ public class GraphicalInterface : MonoBehaviour
             ChangeCameraView(!Input.GetKey(KeyCode.Keypad0), "Right");
 
         MonitorKeyPressed();
+        
+        // AR features go here
+
+        // Cues
+        if (ARisActive)
+        {
+            return;
+        }
+
+        // Color coding
+        if (ARisActive)
+        {
+            return;
+        }
+
+        // This is for testing
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (!Test.activeSelf)
+            {
+                Test.SetActive(true);
+            }
+            else 
+            {
+                Test.SetActive(false);
+            } 
+            
+        }
+
+        Debug.Log(stateReader.linearVelocity[2]);
+
     }
     // Record key pressed during the use of interface
     // TODO though it works, 1) may not be the best script to put this code, and
@@ -634,7 +672,6 @@ public class GraphicalInterface : MonoBehaviour
         
     }
 
-
     public void UpdateHolding()
     {
         bool state = autoNavigation.leftGrasp||autoNavigation.rightGrasp;
@@ -668,7 +705,6 @@ public class GraphicalInterface : MonoBehaviour
         batterySlider.value = Mathf.Clamp(value, 0f, 1f);
     }
 
-    
     // Setup ROBOT AND TASK
     public void SetRobot(GameObject robot, bool isNewRobot)
     {
@@ -762,7 +798,6 @@ public class GraphicalInterface : MonoBehaviour
         currentTask = task;
     }
 
-
     // GUI ENABLED
     public void SetRecordIconActive(bool active)
     {
@@ -773,10 +808,12 @@ public class GraphicalInterface : MonoBehaviour
     {
         helpDisplay.SetActive(!helpDisplay.activeSelf);
     }
+    
     public void ChangeHelpDisplay2()
     {
         helpDisplay2.SetActive(flag2&&!flag3);
     }
+
     public void ChangeInfoObstacle1()
     {
         infoObstacle1.SetActive(!infoObstacle1.activeSelf);
@@ -787,12 +824,12 @@ public class GraphicalInterface : MonoBehaviour
         barCodeScanDisplay.SetActive(!barCodeScanDisplay.activeSelf);
     }
 
-
     // GUI FUNCTIONS
     public void ChangeCameraView(bool mainCamera, string cameraName)
     {
         ChangeCameraView(mainCamera, cameraSystem.GetIndex(cameraName));
     }
+
     public void ChangeCameraView(bool mainCamera, int index)
     {
         if (index < 0 || index >= cameraSystem.cameras.Length)
@@ -942,7 +979,7 @@ public class GraphicalInterface : MonoBehaviour
         //Holding a CART
         infoObstacle1.SetActive(false);
         CarryingObject="cart";
-        Debug.Log("holding a cart");
+        // Debug.Log("holding a cart");
     }
 
     public void CheckButtonY1()
@@ -950,7 +987,7 @@ public class GraphicalInterface : MonoBehaviour
         //Holding a POLE
         infoObstacle1.SetActive(false);
         CarryingObject="pole";
-        Debug.Log("holding a pole");
+        // Debug.Log("holding a pole");
     }
 
     public void CheckButtonY2()
@@ -1002,6 +1039,7 @@ public class GraphicalInterface : MonoBehaviour
         autoNavigation.pause=false;
         autoNavigation.EnableAutonomy();
     }
+
     public Camera[] GetCurrentActiveCameras()
     {
         Camera[] cameras = new Camera[0];
@@ -1015,7 +1053,6 @@ public class GraphicalInterface : MonoBehaviour
         return cameras;
     }
 
-
     // FPS
     private void UpdateFPS()
     {
@@ -1023,4 +1060,19 @@ public class GraphicalInterface : MonoBehaviour
         FPSSum = 0;
         FPSCount = 0;
     }
+
+
+    // This function toggles the AR feature on and off
+    public void toggleAR()
+    {
+        if (ARisActive)
+        {
+            ARisActive = false;
+        }
+        else
+        {
+            ARisActive  = true;
+        } 
+    }
+
 }

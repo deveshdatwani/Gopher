@@ -48,6 +48,7 @@ public class ExperimentManager : MonoBehaviour
         // Start the main menus
         experimentStarted = false;
         LoadMainMenus();
+
         // experiments
         totalTaskIndex = 0;
         totalNumTask = 0;
@@ -56,25 +57,25 @@ public class ExperimentManager : MonoBehaviour
 
     void Update()
     {
-        // // Simulation not started
-        // if (!experimentStarted)
-        //     return;
+        // Simulation not started
+        if (!experimentStarted)
+            return;
 
-        // // Hotkeys
-        // if (Input.GetKeyDown(KeyCode.Escape))
-        //     LoadQuitMenus();
+        // Hotkeys
+        if (Input.GetKeyDown(KeyCode.Escape))
+            LoadQuitMenus();
 
-        // // Check if user starts to move the robot
-        // if (currentTask != null && 
-        //     taskLoaded && !taskStarted && 
-        //     currentTask.CheckTaskStart())
-        // {
-        //     // start
-        //     taskStarted = true;
-        //     StartRecording();
-        //     // check current task status until completion every 1s
-        //     InvokeRepeating("CheckTaskCompletion", 0f, 0.5f);
-        // }
+        // Check if user starts to move the robot
+        if (currentTask != null && 
+            taskLoaded && !taskStarted && 
+            currentTask.CheckTaskStart())
+        {
+            // start
+            taskStarted = true;
+            StartRecording();
+            // check current task status until completion every 1s
+            InvokeRepeating("CheckTaskCompletion", 0f, 0.5f);
+        }
     }
     private void CheckTaskCompletion() 
     {
@@ -103,7 +104,7 @@ public class ExperimentManager : MonoBehaviour
             Experiment experiment = experiments[i];
             // experiment.RandomizeTasks(); // handled in this script now
             totalNumTask += experiment.GetNumTasks();
-
+            
             cumulativeSumNumTask[i] = experiment.GetNumTasks();
             if (i != 0)
                 cumulativeSumNumTask[i] += cumulativeSumNumTask[i-1];
@@ -207,7 +208,7 @@ public class ExperimentManager : MonoBehaviour
         
         // Load new scene and 
         // other game objects (objects, humans, robots, etc.)
-        Debug.Log("Task " + currentTask.taskName + " is loading.");
+        // Debug.Log("Task " + currentTask.taskName + " is loading.");
         StartCoroutine(LoadTaskCoroutine());
         
         // Task flag
@@ -312,7 +313,7 @@ public class ExperimentManager : MonoBehaviour
             experimentMenus.LoadLoading();
         
         // Temp
-        Debug.Log("Reload task " + currentTask.taskName);
+        // Debug.Log("Reload task " + currentTask.taskName);
         // Load scene and 
         // other game objects (objects, humans, robots, etc.)
         StartCoroutine(LoadTaskCoroutine());
