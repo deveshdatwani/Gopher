@@ -23,6 +23,7 @@ public class GraphicalInterface : MonoBehaviour
     public GameObject infoObstacle1;
     public GameObject infoObstacle2;
     public GameObject infoObstacle3;
+    public GameObject GraspTaskDisplay;
 
     // OBH
     private Vector3 prevPos;
@@ -158,6 +159,7 @@ public class GraphicalInterface : MonoBehaviour
 
     void Start() 
     {
+        GraspTaskDisplay.SetActive(false);
         // Activation
         SetUIActive(false);
 
@@ -235,7 +237,18 @@ public class GraphicalInterface : MonoBehaviour
 
     void Update()
     {
-        // Timer
+    	GameObject IVPOLE = GameObject.Find("Service Cart DEMO(Clone)");
+    	float objectDistance = IVPOLE.transform.position.x - robot.transform.position.x;
+    	Debug.Log(objectDistance);
+    	if (Mathf.Abs(objectDistance) < 1)
+    	{
+    	    GraspTaskDisplay.SetActive(true);
+    	}
+    	else
+    	{
+    	    GraspTaskDisplay.SetActive(false);
+    	}
+    	// Timer
         timerPanelText.text = Time.unscaledTime.ToString("0.0");
         // FPS
         FPSCount += 1;
