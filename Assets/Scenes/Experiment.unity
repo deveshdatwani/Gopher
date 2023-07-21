@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655484242370250501, guid: db0c3da79537efc46abf4cb1e66bf7f3, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3655484242370250501, guid: db0c3da79537efc46abf4cb1e66bf7f3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -515,12 +515,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964969529713223379, guid: 6206dc21530d7a21a82c55a022b45547, type: 3}
       propertyPath: m_Text
-      value: "TO MANIPULATE, FOLLOW STEPS\n\nPRESS\n\n1. F1\n2. RIGHT ARROW \n3.
-        USE \"AWSD\" TO MOVE ARM\n4. GRASP: SPACE BAR"
+      value: 'TO MANIPULATE, FOLLOW STEPS
+
+        GRASP WITH BOTH ARMS
+
+
+        PRESS
+
+
+        1.
+        RIGHT ARROW (RIGHT ARM)
+
+        2. F3
+
+        3. USE "AWSD" TO MOVE ARM
+
+        4.
+        GRASP: SPACE BAR'
       objectReference: {fileID: 0}
     - target: {fileID: 4964969529713223379, guid: 6206dc21530d7a21a82c55a022b45547, type: 3}
       propertyPath: m_FontData.m_Alignment
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5331508942682275980, guid: 6206dc21530d7a21a82c55a022b45547, type: 3}
       propertyPath: m_Color.a
@@ -536,7 +551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8460265134415242525, guid: 6206dc21530d7a21a82c55a022b45547, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8460265134415242525, guid: 6206dc21530d7a21a82c55a022b45547, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4321,7 +4336,7 @@ MonoBehaviour:
   infoObstacle2: {fileID: 608681354}
   infoObstacle3: {fileID: 1088084209}
   GraspTaskDisplay: {fileID: 466645984}
-  CarryTaskDisplay: {fileID: 0}
+  CarryTaskDisplay: {fileID: 1967218590}
   cameraDisplay: {fileID: 1037779812}
   secondayCameraDisplay: {fileID: 1017130285}
   minimapDisplay: {fileID: 1945023576}
@@ -7670,7 +7685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331545058972343374, guid: e1b42e119f9071c4a8aef7f4ff72d90c, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2331545058972343374, guid: e1b42e119f9071c4a8aef7f4ff72d90c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8872,7 +8887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899996975060150976, guid: 4c4534d0646cb9242bc4ed281a958ab2, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 899996975060150976, guid: 4c4534d0646cb9242bc4ed281a958ab2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10708,6 +10723,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945023576}
   m_CullTransparentMesh: 1
+--- !u!1 &1967218590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8973177546146775974, guid: 6206dc21530d7a21a82c55a022b45547, type: 3}
+  m_PrefabInstance: {fileID: 1367775319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2022596938
 GameObject:
   m_ObjectHideFlags: 0

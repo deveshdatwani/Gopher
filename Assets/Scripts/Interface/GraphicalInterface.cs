@@ -241,33 +241,40 @@ public class GraphicalInterface : MonoBehaviour
     	GameObject IV = GameObject.Find("IV Pole Movable(Clone)");
     	float objectDistanceIV = IV.transform.position.x - robot.transform.position.x;
     	
-    	if (Mathf.Abs(objectDistanceCART) < 3)
+    	if (Mathf.Abs(objectDistanceCART) < 3f)
     	{
     	     GraspTaskDisplay.SetActive(true);
-    	     if (Mathf.Abs(objectDistanceCART) < 1)
+    	     if (Mathf.Abs(objectDistanceCART) < 1.5)
     	     {
     	         HighlightUtils.HighlightObject(CART, Color.red);   
+    	     }
+    	     else
+    	     {
+    	         HighlightUtils.HighlightObject(IV, Color.blue);
     	     }
     	     
     	}
     	else
     	{
     	    GraspTaskDisplay.SetActive(false);
-    	    HighlightUtils.HighlightObject(IV, Color.blue);
+    	    // HighlightUtils.HighlightObject(IV, Color.blue);
     	}
-    	if (Mathf.Abs(objectDistanceIV) < 3)
+    	if (Mathf.Abs(objectDistanceIV) < 3f)
     	{
     	     CarryTaskDisplay.SetActive(true);
     	     if (Mathf.Abs(objectDistanceIV) < 0.5)
     	     {
     	         HighlightUtils.HighlightObject(IV, Color.red);   
     	     }
+    	     else 
+    	     {
+    	         HighlightUtils.HighlightObject(CART, Color.blue);
+    	     }
     	     
     	}
     	else
     	{
     	    CarryTaskDisplay.SetActive(false);
-    	    HighlightUtils.HighlightObject(CART, Color.blue);
     	}
     	// Timer
         timerPanelText.text = Time.unscaledTime.ToString("0.0");
