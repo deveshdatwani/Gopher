@@ -24,11 +24,11 @@ public class GraphicalInterface : MonoBehaviour
     public GameObject infoObstacle2;
     public GameObject infoObstacle3;
     public GameObject GraspTaskDisplay;
+    public GameObject CarryTaskDisplay;
 
     // OBH
     private Vector3 prevPos;
     private float currentPos;
-    private float dPos = 1;
     private float elapsedTime;
     private float nextActionTime;
     private GameObject obstacle;
@@ -159,7 +159,6 @@ public class GraphicalInterface : MonoBehaviour
 
     void Start() 
     {
-        GraspTaskDisplay.SetActive(false);
         // Activation
         SetUIActive(false);
 
@@ -237,16 +236,38 @@ public class GraphicalInterface : MonoBehaviour
 
     void Update()
     {
-    	GameObject IVPOLE = GameObject.Find("Service Cart DEMO(Clone)");
-    	float objectDistance = IVPOLE.transform.position.x - robot.transform.position.x;
-    	Debug.Log(objectDistance);
-    	if (Mathf.Abs(objectDistance) < 1)
+    	GameObject CART = GameObject.Find("Service Cart DEMO(Clone)");
+    	float objectDistanceCART = CART.transform.position.x - robot.transform.position.x;
+    	GameObject IV = GameObject.Find("IV Pole Movable(Clone)");
+    	float objectDistanceIV = IV.transform.position.x - robot.transform.position.x;
+    	
+    	if (Mathf.Abs(objectDistanceCART) < 3)
     	{
-    	    GraspTaskDisplay.SetActive(true);
+    	     GraspTaskDisplay.SetActive(true);
+    	     if (Mathf.Abs(objectDistanceCART) < 1)
+    	     {
+    	         HighlightUtils.HighlightObject(CART, Color.red);   
+    	     }
+    	     
     	}
     	else
     	{
     	    GraspTaskDisplay.SetActive(false);
+    	    HighlightUtils.HighlightObject(IV, Color.blue);
+    	}
+    	if (Mathf.Abs(objectDistanceIV) < 3)
+    	{
+    	     CarryTaskDisplay.SetActive(true);
+    	     if (Mathf.Abs(objectDistanceIV) < 0.5)
+    	     {
+    	         HighlightUtils.HighlightObject(IV, Color.red);   
+    	     }
+    	     
+    	}
+    	else
+    	{
+    	    CarryTaskDisplay.SetActive(false);
+    	    HighlightUtils.HighlightObject(CART, Color.blue);
     	}
     	// Timer
         timerPanelText.text = Time.unscaledTime.ToString("0.0");
